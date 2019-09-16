@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
+  skip: True  # [py<36]
 
 requirements:
   build:
@@ -20,10 +20,11 @@ requirements:
   host:
     - python
     - pip
+    - freetype
   run:
     - python
+    - freetype  # it is a dependency of pillow, but putting it here explicitly
     - pillow >=2.4.0
-    - freetype
 
 test:
   imports:
@@ -37,6 +38,13 @@ test:
     - reportlab.pdfbase
     - reportlab.pdfgen
     - reportlab.platypus
+  source_files:
+    - docs/
+    - tests/
+    - tools/
+  commands:
+    - "cd tests && $PYTHON runAll.py"  # [not win]
+    - "cd tests && %PYTHON% runAll.py"  # [win]
 
 about:
   home: https://www.reportlab.com
