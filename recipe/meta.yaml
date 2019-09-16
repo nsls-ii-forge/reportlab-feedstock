@@ -38,6 +38,8 @@ test:
     - reportlab.pdfbase
     - reportlab.pdfgen
     - reportlab.platypus
+  source_files:
+    - tests/
   commands:
     - "$PYTHON -m unittest"  # [not win]
     - "%PYTHON% -m unittest"  # [win]
