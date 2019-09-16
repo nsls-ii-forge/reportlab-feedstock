@@ -41,6 +41,7 @@ test:
   source_files:
     - docs/
     - tests/
+    - tools/
   commands:
     - "cd tests && $PYTHON runAll.py"  # [not win]
     - "cd tests && %PYTHON% runAll.py"  # [win]
