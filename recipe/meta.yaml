@@ -41,8 +41,8 @@ test:
   source_files:
     - tests/
   commands:
-    - "$PYTHON -m unittest"  # [not win]
-    - "%PYTHON% -m unittest"  # [win]
+    - "$PYTHON tests/runAll.py"  # [not win]
+    - "%PYTHON% tests/runAll.py"  # [win]
 
 about:
   home: https://www.reportlab.com
