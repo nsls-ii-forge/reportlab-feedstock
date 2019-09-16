@@ -39,6 +39,7 @@ test:
     - reportlab.pdfgen
     - reportlab.platypus
   source_files:
+    - docs/
     - tests/
   commands:
     - "cd tests && $PYTHON runAll.py"  # [not win]
