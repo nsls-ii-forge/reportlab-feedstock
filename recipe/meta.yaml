@@ -12,10 +12,6 @@ source:
 
 build:
   number: 0
-  script: |
-    "set FT_LIB=%LIBRARY_LIB%\freetype.lib"  # [win]
-    "set FT_INC=%LIBRARY_INC%\\"  # [win]
-    "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [py<36]
 
 requirements:
