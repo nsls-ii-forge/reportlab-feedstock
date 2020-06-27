@@ -1,9 +1,7 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
 c_compiler:
-- clang
+- gcc
 c_compiler_version:
-- '9'
+- '7'
 channel_sources:
 - nsls2forge,defaults
 channel_targets:
@@ -12,10 +10,6 @@ docker_image:
 - nsls2/nsls2forge:latest
 freetype:
 - 2.9.1
-macos_machine:
-- x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
 pin_run_as_build:
   freetype:
     max_pin: x
@@ -23,4 +17,4 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- '3.6'
+- '3.8'
