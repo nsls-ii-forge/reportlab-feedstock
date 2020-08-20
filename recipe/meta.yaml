@@ -1,6 +1,6 @@
 {% set name = "reportlab" %}
-{% set version = "3.5.44" %}
-{% set sha256 = "670650970c7ba7164cf6340bcd182e7e933eff5d65183af98ee77b40cc25a438" %}
+{% set version = "3.5.47" %}
+{% set sha256 = "45b2a7aa65e082bf481eea9994cdc00292698f8dc9e4a8c0ecfc6be90548803f" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [py<36]
+  skip: true  # [py<36]
 
 requirements:
   build:
@@ -43,7 +43,7 @@ test:
     - tests/
     - tools/
   commands:
-    - "cd tests && $PYTHON runAll.py"  # [not win]
+    - cd tests && $PYTHON runAll.py    # [not win]
     # Skip full Windows tests for now. See
     # https://github.com/nsls-ii-forge/reportlab-feedstock/pull/4 for details.
     # - "cd tests && %PYTHON% runAll.py"  # [win]
@@ -53,5 +53,5 @@ about:
   license: BSD 3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Open-source engine for creating complex, data-driven PDF documents and custom vector graphics'
+  summary: Open-source engine for creating complex, data-driven PDF documents and custom vector graphics
   doc_url: https://www.reportlab.com/dev/docs
