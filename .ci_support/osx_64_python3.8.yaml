@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '9'
+- '10'
 channel_sources:
 - nsls2forge,defaults
 channel_targets:
@@ -24,3 +24,5 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - '3.8'
+target_platform:
+- osx-64
