@@ -1,13 +1,13 @@
 c_compiler:
 - vs2017
+cdt_name:
+- cos6
 channel_sources:
 - nsls2forge,defaults
 channel_targets:
 - nsls2forge main
-docker_image:
-- nsls2/nsls2forge:latest
 freetype:
-- 2.9.1
+- '2'
 pin_run_as_build:
   freetype:
     max_pin: x
