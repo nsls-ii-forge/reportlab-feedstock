@@ -1,6 +1,6 @@
 {% set name = "reportlab" %}
-{% set version = "3.5.50" %}
-{% set sha256 = "876ce59164245f62bf67b8502e127b0a3ffd40f37c7177d1b4d9da24e42a77b0" %}
+{% set version = "3.5.66" %}
+{% set sha256 = "63fba51babad0047def4ffaa41d0065248ca39d680e98dc9e3010de5425539b4" %}
 
 package:
   name: {{ name|lower }}
@@ -12,28 +12,30 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<36]
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
     - python
-    - pip
     - freetype
+    - pillow >=2.4.0
+    - pip
   run:
     - python
-    - freetype  # it is a dependency of pillow, but putting it here explicitly
+    - freetype
     - pillow >=2.4.0
 
 test:
   imports:
     - reportlab
+    - reportlab.graphics
+    - reportlab.graphics.barcode
     - reportlab.graphics.charts
     - reportlab.graphics.samples
     - reportlab.graphics.widgets
-    - reportlab.graphics.barcode
-    - reportlab.graphics
     - reportlab.lib
     - reportlab.pdfbase
     - reportlab.pdfgen
@@ -49,9 +51,9 @@ test:
     # - "cd tests && %PYTHON% runAll.py"  # [win]
 
 about:
-  home: https://www.reportlab.com
+  home: http://www.reportlab.com/opensource/
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
   summary: Open-source engine for creating complex, data-driven PDF documents and custom vector graphics
-  doc_url: https://www.reportlab.com/dev/docs
+  doc_url: http://www.reportlab.com/documentation/
