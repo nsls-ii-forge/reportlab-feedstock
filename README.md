@@ -1,7 +1,7 @@
 About reportlab
 ===============
 
-Home: http://www.reportlab.com/opensource/
+Home: https://www.reportlab.com/opensource/
 
 Package license: BSD-3-Clause
 
@@ -9,7 +9,9 @@ Feedstock license: [BSD-3-Clause](https://github.com/nsls-ii-forge/reportlab-fee
 
 Summary: Open-source engine for creating complex, data-driven PDF documents and custom vector graphics
 
-Documentation: http://www.reportlab.com/documentation/
+Development: https://hg.reportlab.com/hg-public/reportlab/
+
+Documentation: https://www.reportlab.com/dev/docs/
 
 Current build status
 ====================
