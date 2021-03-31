@@ -40,15 +40,13 @@ test:
     - reportlab.pdfbase
     - reportlab.pdfgen
     - reportlab.platypus
-  source_files:  # [not win]
-    - docs/      # [not win]
-    - tests/     # [not win]
-    - tools/     # [not win]
+  source_files:
+    - docs/
+    - tests/
+    - tools/
   commands:
     - cd tests && $PYTHON runAll.py    # [not win]
-    # Skip full Windows tests for now. See
-    # https://github.com/nsls-ii-forge/reportlab-feedstock/pull/4 for details.
-    # - "cd tests && %PYTHON% runAll.py"  # [win]
+    - "cd tests && %PYTHON% runAll.py" # [win]
 
 about:
   home: https://www.reportlab.com/opensource/
