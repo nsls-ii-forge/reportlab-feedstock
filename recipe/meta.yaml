@@ -40,10 +40,10 @@ test:
     - reportlab.pdfbase
     - reportlab.pdfgen
     - reportlab.platypus
-  source_files:
-    - docs/
-    - tests/
-    - tools/
+  source_files:  # [not win]
+    - docs/      # [not win]
+    - tests/     # [not win]
+    - tools/     # [not win]
   commands:
     - cd tests && $PYTHON runAll.py    # [not win]
     # Skip full Windows tests for now. See
