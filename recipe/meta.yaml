@@ -20,9 +20,9 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
+    - pip
     - freetype
     - pillow >=2.4.0
-    - pip
   run:
     - python
     - freetype
@@ -40,13 +40,6 @@ test:
     - reportlab.pdfbase
     - reportlab.pdfgen
     - reportlab.platypus
-  source_files:
-    - docs/
-    - tests/
-    - tools/
-  commands:
-    - cd tests && $PYTHON runAll.py    # [not win]
-    - "cd tests && %PYTHON% runAll.py" # [win]
 
 about:
   home: https://www.reportlab.com/opensource/
